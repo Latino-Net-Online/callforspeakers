@@ -15,10 +15,10 @@ instance.interceptors.request.use(
   function (config) {
     var token = sessionStorage.getItem("access_token");
     if (token) {
-      config.headers = {
+      Object.assign(config.headers, {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
-      };
+      });
     }
 
     return config;

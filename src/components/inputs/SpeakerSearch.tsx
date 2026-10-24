@@ -65,6 +65,8 @@ const SpeakerSearch: React.FC<SpeakerSearchProps> = ({
   return (
     <SelectSearch
       options={[]}
+      onBlur={() => {}}
+      onFocus={() => {}}
       onChange={(value) =>
         onChange(speakersState.filter((x) => x.email == value.toString())[0])
       }

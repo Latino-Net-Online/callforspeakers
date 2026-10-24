@@ -37,7 +37,6 @@ const ImageCropperModal: React.FC<ImageCropperModalProps> = ({
               <Cropper
                 ref={cropperRef}
                 className="upload-example__cropper"
-                imageClassName=""
                 src={image}
                 onChange={onChange}
                 stencilProps={{
