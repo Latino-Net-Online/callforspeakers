@@ -31,13 +31,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - uses: pnpm/action-setup@v4
+
     - uses: actions/setup-node@v4
       with:
         node-version: 24
-        cache: npm
+        cache: pnpm
     
     - name: Install Dependencies
-      run: npm ci
+      run: pnpm install --frozen-lockfile
     
     - uses: microsoft/variable-substitution@v1 
       with:
@@ -57,7 +59,7 @@ jobs:
        
 
     - name: Build
-      run: npm run build
+      run: pnpm run build
       
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3

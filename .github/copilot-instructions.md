@@ -1,13 +1,13 @@
 # Copilot instructions
 
-Call-for-speakers form for Latino .NET Online: a React 19 + TypeScript SPA built with Vite, deployed to GitHub Pages. (`README.md` is leftover Create React App boilerplate and is outdated.)
+Call-for-speakers form for Latino .NET Online: a React 19 + TypeScript SPA built with Vite and managed with pnpm (lockfile `pnpm-lock.yaml`; dependency build scripts are denied in `pnpm-workspace.yaml`), deployed to GitHub Pages. (`README.md` is leftover Create React App boilerplate and is outdated.)
 
 ## Commands
 
-- `npm start` – Vite dev server on http://localhost:3000 (port matters: the dev OIDC redirect URIs in `src/config/env.json` use it)
-- `npm run build` – `tsc --noEmit && vite build`, output in `build/`. The type check is the only lint/static check; there is no ESLint.
-- `npm test` – `vitest run --passWithNoTests` (jsdom). There are currently no tests. Run one file with `npx vitest run path/to/file.test.tsx`, or one test with `-t "name"`.
-- `npm run api` – regenerates the axios client in `src/generated-sources/openapi` from `docs/openapi.json` (openapi-generator-cli 6.0.1, needs Java). Generated code is committed; never edit it by hand.
+- `pnpm start` – Vite dev server on http://localhost:3000 (port matters: the dev OIDC redirect URIs in `src/config/env.json` use it)
+- `pnpm run build` – `tsc --noEmit && vite build`, output in `build/`. The type check is the only lint/static check; there is no ESLint.
+- `pnpm test` – `vitest run --passWithNoTests` (jsdom). There are currently no tests. Run one file with `pnpm exec vitest run path/to/file.test.tsx`, or one test with `-t "name"`.
+- `pnpm run api` – regenerates the axios client in `src/generated-sources/openapi` from `docs/openapi.json` (openapi-generator-cli 6.0.1, needs Java). Generated code is committed; never edit it by hand.
 
 ## Architecture
 
